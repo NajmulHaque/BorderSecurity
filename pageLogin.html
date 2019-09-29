@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Login (Abacus Security)</title>
+        <link rel="stylesheet" href="style/loginStyle.css">
+    </head>
+    <body>
+        <!-- HTML code -->
+        <div class="container">
+            <h1 style="text-align: center">Abacus Security </h1>
+            <div class="box" >
+                <h1>Login</h1>
+                <input type="text" name="" placeholder="Username" id="email">
+                <input type="password" name="" placeholder="Password" id="pass">
+                <input type="submit" name="" value="Login" onclick="verifyUser()">
+                <a class="b2" href="/signup">REGISTER HERE</a>
+            </div>
+        </div>
+
+    <!-- Script Code     -->
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCuhPgQT7qXOIXw9opLLiQmK59exLrZ0Hg",
+            authDomain: "cse299teamabacus.firebaseapp.com",
+            databaseURL: "https://c...content-available-to-author-only...o.com",
+            projectId: "cse299teamabacus",
+            storageBucket: "cse299teamabacus.appspot.com",
+            messagingSenderId: "219232728032"
+        };
+        firebase.initializeApp(config);
+        
+        // login with firebase authentication 
+        var email = document.getElementById("email");
+        var pass = document.getElementById("pass");
+        
+        function verifyUser(){
+            console.log(email.value);
+            console.log(pass.value);
+            firebase.auth().signInWithEmailAndPassword(email.value, pass.value)
+            .then(function(firebaseUser){
+                ///Success full login and redirect
+                location.replace("/home");
+            })
+            .catch(function(error) {
+                // Handle Errors here.
+                // var errorCode = error.code;
+                 var errorMessage = error.message;
+                console.log(errorMessage);
+                 alert("Fail login!!");
+            });
+            
+        }
+    </script>
+
+    </body>
+</html>

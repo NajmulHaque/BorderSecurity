@@ -1,0 +1,30 @@
+{
+  "name": "team_abacus",
+  "version": "1.0.0",
+  "description": "\"Cse299 home security project\"",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon main.js ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NajmulHaque/BorderSecurity.git"
+  },
+  "keywords": [
+    "simple",
+    "nodejs",
+    "app"
+  ],
+  "author": "ibrahim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NajmulHaque/BorderSecurity.git"
+  },
+  "homepage": "https://github.com/NajmulHaque/BorderSecurity.git",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "nodemon": "^1.18.5"
+  }
+}

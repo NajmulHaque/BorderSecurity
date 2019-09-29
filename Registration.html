@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style/signupStyle.css">
+        <link rel=""  href="main.js">
+        <title>Security Registration Form</title>
+    </head>
+    <body>
+
+        <div class="box">
+            <h1>Registration</h1>
+            <p>Create an Account </p>
+            <input type="email" name="" placeholder="Email" id="email">
+            <input type="password" name="" placeholder="Password" id="password" required>
+            <input type="password" name="" placeholder="Confirm Password" id="rePassword" required>
+            <input type="submit" name="" value="Register" onclick="signUp()">
+            <a class="b1" href="/">Already Have an Account? Back To login page</a>
+
+        </div>
+
+        
+        <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyCuhPgQT7qXOIXw9opLLiQmK59exLrZ0Hg",
+                authDomain: "cse299teamabacus.firebaseapp.com",
+                databaseURL: "https://c...content-available-to-author-only...o.com",
+                projectId: "cse299teamabacus",
+                storageBucket: "cse299teamabacus.appspot.com",
+                messagingSenderId: "219232728032"
+            };
+            firebase.initializeApp(config);
+        
+        
+        
+            function signUp(){
+            
+                var email = document.getElementById("email");
+                var password = document.getElementById("password");
+                var rePassword = document.getElementById("rePassword");
+            
+                console.log(email.value);
+                console.log(password.value);
+                console.log(rePassword.value);
+                console.log(password.value==rePassword.value);
+                
+                if(password.value==rePassword.value){
+                    firebase.auth().createUserWithEmailAndPassword(email.value,password.value)
+                    .then((success)=>{
+                        console.log("Success!!")
+                        console.log(success);
+                        // alert("Success!!")
+                        location.replace("/");
+                    })
+                    .catch( (error)=>{
+                        console.log("This email already used!!")
+                        alert("This email already used!!")
+                    });
+                }else{
+                    console.log("don't match");
+                    alert("re password not match!!");
+                }
+            
+            }
+            
+        
+        
+        </script>
+    </body>
+</html>
