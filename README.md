@@ -7,11 +7,11 @@
       In this project we use IR sensor, nodeMCU, heroku cloud server, nodejs app engine, android studio. NodeMCU always connected to server by wifi service and have a ability to send http request to server . This notification store in server database and server notice center update. When server update , then this update notification send to user . User have a android app , web and android app immediately see this notification. 
 
 (2.1) System Diagram         
-      <img src="/diagram.png"/> 
+      <img src="diagram.png"/> 
       Figure : System process diagram
 
 (2.2) System Example
-      <img src="/flowchart.png"/> 
+      <img src="flowchart.png"/> 
 
 
 
