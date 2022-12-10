@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/NajmulHaque/BorderSecurity.git",
   "dependencies": {
-    "express": "^4.16.4",
+    "express": "^4.18.2",
     "mysql": "^2.16.0",
     "nodemon": "^1.18.5"
   }
